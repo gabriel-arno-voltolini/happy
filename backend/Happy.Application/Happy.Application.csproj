@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <Folder Include="AppFlowControl\" />
+    <Folder Include="Interfaces\Services\" />
     <Folder Include="Models\" />
     <Folder Include="AutoMapper\" />
     <Folder Include="Services\" />
