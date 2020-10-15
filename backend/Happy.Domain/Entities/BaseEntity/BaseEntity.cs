@@ -4,7 +4,7 @@ using System;
 
 namespace Happy.Domain.Entities.BaseEntity
 {
-    public abstract class BaseEntity
+    public abstract class BaseEntity : IBaseEntity
     {
         protected readonly IValidator _validator;
 
