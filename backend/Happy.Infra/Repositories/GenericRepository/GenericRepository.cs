@@ -66,12 +66,12 @@ namespace Happy.Infra.Repositories.GenericRepository
             return _dbSet.AsNoTracking().Where(c => !c.Deleted);
         }
 
-        public async Task<bool> EntityExists(TEntity entity)
+        public virtual async Task<bool> EntityExists(TEntity entity)
         {
             throw new System.NotImplementedException();
         }
 
-        public async Task<bool> EntityExists(int id)
+        public virtual async Task<bool> EntityExists(int id)
         {
             throw new System.NotImplementedException();
         }
