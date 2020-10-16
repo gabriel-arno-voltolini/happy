@@ -1,5 +1,8 @@
+using Happy.Infra.Context;
+using Happy.Web.SetupInjection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -17,7 +20,11 @@ namespace Happy.Web
 
         public void ConfigureServices(IServiceCollection services)
         {
+            AddDbContextCollection(services);
+            services.SetupServicesDependencies();
+            services.SetupRepositoriesDependencies();
             services.AddControllers();
+            services.AddCors();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -37,6 +44,12 @@ namespace Happy.Web
             {
                 endpoints.MapControllers();
             });
+        }
+
+        private void AddDbContextCollection(IServiceCollection services)
+        {
+            services.AddDbContext<MainContext>(opt => opt
+                .UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
         }
     }
 }
