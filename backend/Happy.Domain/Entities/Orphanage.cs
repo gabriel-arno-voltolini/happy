@@ -6,13 +6,13 @@ namespace Happy.Domain.Entities
     public class Orphanage : BaseEntity, IOrphanage
     {
         public string Name { get; protected set; }
-        public decimal Latitude { get; protected set; }
-        public decimal Longitude { get; protected set; }
+        public double Latitude { get; protected set; }
+        public double Longitude { get; protected set; }
         public string About { get; protected set; }
         public string Instructions { get; protected set; }
         public bool OpensOnWeekends { get; protected set; }
 
-        public Orphanage(string name, decimal latitude, decimal longitude)
+        public Orphanage(string name, double latitude, double longitude)
             : base(new OrphanageValidator())
         {
             Name = name;
@@ -20,7 +20,7 @@ namespace Happy.Domain.Entities
             Longitude = longitude;
         }
 
-        public Orphanage(string name, decimal latitude, decimal longitude,
+        public Orphanage(string name, double latitude, double longitude,
             string about, string instructions, bool opensOnWeekends)
             : this(name, latitude, longitude)
         {
@@ -33,7 +33,7 @@ namespace Happy.Domain.Entities
         {
         }
 
-        public void Update(string name, decimal latitude, decimal longitude)
+        public void Update(string name, double latitude, double longitude)
         {
             Update();
             Name = name;
