@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace Happy.Domain.Interfaces.Repositories
 {
-    interface IGenericRepository<TEntity> where TEntity : BaseEntity
+    public interface IGenericRepository<TEntity> where TEntity : BaseEntity
     {
         Task<TEntity> GetById(int id);
 
