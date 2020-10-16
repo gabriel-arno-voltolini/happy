@@ -23,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Happy.Tests.Integration", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Happy.Tests.Unit", "Happy.Tests.Unit\Happy.Tests.Unit.csproj", "{A3EE4C27-B81D-4EF0-ADDA-6CDAAD488E6D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Happy.Web", "Happy.Web\Happy.Web.csproj", "{884F9D11-B896-4A88-B279-821CCA130D84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Happy.Web", "Happy.Web\Happy.Web.csproj", "{884F9D11-B896-4A88-B279-821CCA130D84}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
