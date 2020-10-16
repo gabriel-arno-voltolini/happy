@@ -2,7 +2,7 @@
 {
     internal interface IOrphanage
     {
-        void Update(string name, decimal latitude, decimal longitude);
+        void Update(string name, double latitude, double longitude);
 
         void Update(string about, string instructions, bool opensOnWeekends);
     }
