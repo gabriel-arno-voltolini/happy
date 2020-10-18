@@ -10,6 +10,7 @@ namespace Happy.Domain.Entities
         public double Longitude { get; protected set; }
         public string About { get; protected set; }
         public string Instructions { get; protected set; }
+        public string OpeningHours { get; protected set; }
         public bool OpensOnWeekends { get; protected set; }
 
         public Orphanage(string name, double latitude, double longitude)
@@ -21,11 +22,12 @@ namespace Happy.Domain.Entities
         }
 
         public Orphanage(string name, double latitude, double longitude,
-            string about, string instructions, bool opensOnWeekends)
+            string about, string instructions, string openingHours, bool opensOnWeekends)
             : this(name, latitude, longitude)
         {
             About = about;
             Instructions = instructions;
+            OpeningHours = openingHours;
             OpensOnWeekends = opensOnWeekends;
         }
 
@@ -41,11 +43,12 @@ namespace Happy.Domain.Entities
             Longitude = longitude;
         }
 
-        public void Update(string about, string instructions, bool opensOnWeekends)
+        public void Update(string about, string instructions, string openingHours, bool opensOnWeekends)
         {
             Update();
             About = about;
             Instructions = instructions;
+            OpeningHours = openingHours;
             OpensOnWeekends = opensOnWeekends;
         }
     }

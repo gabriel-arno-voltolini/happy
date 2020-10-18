@@ -4,6 +4,6 @@
     {
         void Update(string name, double latitude, double longitude);
 
-        void Update(string about, string instructions, bool opensOnWeekends);
+        void Update(string about, string instructions, string openingHours, bool opensOnWeekends);
     }
 }
