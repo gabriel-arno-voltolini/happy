@@ -20,6 +20,10 @@ namespace Happy.Domain.Validators
                  .Length(0, 2048)
                  .WithMessage("Instructions length must be between 0 and 2048 chars");
 
+            RuleFor(c => c.OpeningHours)
+                 .Length(0, 64)
+                 .WithMessage("Opening hours length must be between 0 and 64 chars");
+
             RuleFor(c => c.Latitude)
                 .ValidateLatitude()
                 .WithMessage("Invalid Latitude");
