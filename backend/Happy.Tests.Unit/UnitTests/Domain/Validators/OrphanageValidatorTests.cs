@@ -105,6 +105,36 @@ namespace Happy.Tests.Unit.UnitTests.Domain.Validators
 
         [Trait("OrphanageValidatorTests", "Unit")]
         [Fact]
+        public void OpeningHours_Must_Validate_Property()
+        {
+            //Arrange
+            var orphanage = new OrphanageBuilder()
+                   .WithOpeningHours("10am - 12pm")
+                   .Build();
+
+            //Assert
+            _orphanageValidator
+                .ShouldNotHaveValidationErrorFor(entity => entity.OpeningHours, orphanage);
+
+        }
+
+        [Trait("OrphanageValidatorTests", "Unit")]
+        [Fact]
+        public void OpeningHours_Must_Not_Validate_Property_When_Oversized()
+        {
+            //Arrange
+            var orphanage = new OrphanageBuilder()
+                   .WithOpeningHours(_oversizedTestStringLength4096)
+                   .Build();
+
+            //Assert
+            _orphanageValidator
+                .ShouldHaveValidationErrorFor(entity => entity.OpeningHours, orphanage)
+                .WithErrorMessage("Opening hours length must be between 0 and 64 chars");
+        }
+
+        [Trait("OrphanageValidatorTests", "Unit")]
+        [Fact]
         public void Latitude_Must_Validate_Property()
         {
             //Arrange

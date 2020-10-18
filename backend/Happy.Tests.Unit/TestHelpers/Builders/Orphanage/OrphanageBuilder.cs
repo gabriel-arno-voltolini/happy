@@ -9,6 +9,7 @@ namespace Happy.Tests.Unit.TestHelpers.Builders.DomainEntitiesBuilders
         private double _longitude;
         private string _about;
         private string _instructions;
+        private string _openingHours;
         private bool _opensOnWeekends;
 
         public OrphanageBuilder WithName(string name)
@@ -41,6 +42,12 @@ namespace Happy.Tests.Unit.TestHelpers.Builders.DomainEntitiesBuilders
             return this;
         }
 
+        public OrphanageBuilder WithOpeningHours(string openingHours)
+        {
+            _openingHours = openingHours;
+            return this;
+        }
+
         public OrphanageBuilder WithOpensOnWeekends(bool openOnWeekends)
         {
             _opensOnWeekends = openOnWeekends;
@@ -56,6 +63,7 @@ namespace Happy.Tests.Unit.TestHelpers.Builders.DomainEntitiesBuilders
                 _longitude,
                 _about,
                 _instructions,
+                _openingHours,
                 _opensOnWeekends
                 );
         }
@@ -68,6 +76,7 @@ namespace Happy.Tests.Unit.TestHelpers.Builders.DomainEntitiesBuilders
                  .WithLongitude(-49.2668968)
                  .WithAbout("Our missions is to improve mankind")
                  .WithInstructions("Contact us for visiting")
+                 .WithOpeningHours("10am - 3pm")
                  .WithOpensOnWeekends(true)
                  .Build();
         }
@@ -80,6 +89,7 @@ namespace Happy.Tests.Unit.TestHelpers.Builders.DomainEntitiesBuilders
                  .WithLongitude(-00)
                  .WithAbout("")
                  .WithInstructions("                  ")
+                 .WithOpeningHours(null)
                  .WithOpensOnWeekends(false)
                  .Build();
         }

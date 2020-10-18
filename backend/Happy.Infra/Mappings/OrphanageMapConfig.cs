@@ -26,6 +26,11 @@ namespace Happy.Infra.Mappings
                 .IsUnicode(true)
                 .HasColumnName("Instructions");
 
+            builder.Property(c => c.OpeningHours)
+               .HasMaxLength(64)
+               .IsUnicode(true)
+               .HasColumnName("OpeningHours");
+
             builder.Property(c => c.Latitude)
                 .IsRequired()
                 .HasColumnName("Latitude");
