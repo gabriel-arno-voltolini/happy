@@ -6,6 +6,6 @@ namespace Happy.Application.Interfaces.Services
 {
     public interface IOrphanageService : IGenericService<OrphanageRequestModel, OrphanageResponseModel>
     {
-        Task<DataResponse<OrphanageResponseModel>> GetAll(int id);
+        Task<DataResponse<OrphanageResponseModel>> GetAll();
     }
 }
