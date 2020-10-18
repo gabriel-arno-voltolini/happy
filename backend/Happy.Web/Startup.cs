@@ -23,6 +23,7 @@ namespace Happy.Web
             AddDbContextCollection(services);
             services.SetupServicesDependencies();
             services.SetupRepositoriesDependencies();
+            services.SetupAutoMapperDependecies();
             services.AddControllers();
             services.AddCors();
         }
